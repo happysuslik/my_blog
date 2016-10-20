@@ -1,4 +1,5 @@
 class Publication < ApplicationRecord
   belongs_to :user
-  validates :title, :description, :avatar, presence: true
+  validates :title, :description, presence: true
+  mount_uploader :avatar, AvatarUploader
 end

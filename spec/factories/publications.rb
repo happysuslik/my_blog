@@ -5,4 +5,9 @@ FactoryGirl.define do
     description "MyText"
     avatar "MyString"
   end
+
+  factory :invalid_publication, class: "Publication" do
+  	title nil
+  	description nil
+  end
 end
