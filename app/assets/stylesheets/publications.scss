@@ -1,4 +1,6 @@
 .publication_image {
+    width: 500px;
+    margin: 0 auto;
 	img {
 		width: 100%;
 	}
@@ -29,4 +31,15 @@ footer {
 footer, .navbar {
 	background-color: #000000;
 	border-radius: 0px;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 70%;
+  margin: auto;
+}
+
+.carousel-inner {
+    height: 353px;
+    text-align: center;
 }

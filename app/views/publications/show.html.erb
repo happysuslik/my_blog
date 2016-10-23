@@ -10,5 +10,12 @@
     </div>
     <div><%= @publication.description %></div>
 	</div>
+  <h1 class="text-center">Похожие статьи</h1>
+  <div>
+    <%= render 'carusel', collection: @random_publications %>
+  </div>
+  
 </div>
+
+
 

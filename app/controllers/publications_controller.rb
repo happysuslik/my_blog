@@ -6,6 +6,7 @@ class PublicationsController < ApplicationController
   end
 
   def show
+    @random_publications = Publication.random_publications
   end
 
   def new
