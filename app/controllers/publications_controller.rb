@@ -1,5 +1,6 @@
 class PublicationsController < ApplicationController
   before_action :load_publication, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:new, :edit, :update, :destroy, :create]
  
   def index
     @publications = Publication.all

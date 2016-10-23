@@ -1,6 +1,8 @@
-<div class="col-md-8">
-  <h1>Publications 
-		<%= link_to("New", new_publication_path, class: "btn btn-success") %>
+<div class="col-md-12">
+  <h1 class="text-center">Publications 
+  	<% if user_signed_in? %>
+			<%= link_to("New", new_publication_path, class: "btn btn-success") %>
+		<% end %>
 	</h1>
 </div>
 <div class="col-md-12">
