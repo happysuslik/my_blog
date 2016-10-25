@@ -2,7 +2,9 @@
   <div class="panel-heading">
   	<%= @publication.title %>
     <% if user_signed_in? %>
-      <%= link_to('Edit', edit_publication_path, class: "btn btn-warning") %>
+      <% if @author_user %>
+        <%= link_to('Edit', edit_publication_path, class: "btn btn-warning") %>
+      <% end %>
       <% if current_user.admin? %>
         <%= link_to('Delete', @publication, method: :delete, class: "btn btn-danger") %>
       <% end %>

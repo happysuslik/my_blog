@@ -7,18 +7,19 @@ class PublicationsController < ApplicationController
   end
 
   def show
+    @author_user = Publication.author_publication(current_user, @publication)
     @random_publications = Publication.random_publications
   end
 
   def new
-    @publication = Publication.new
+    @publication = current_user.publications.new
   end
 
   def edit
   end
 
   def create
-    @publication = Publication.new(publication_params)
+    @publication = current_user.publications.new(publication_params)
 
     if @publication.save
       redirect_to @publication
