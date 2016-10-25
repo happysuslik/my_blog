@@ -1,0 +1,25 @@
+<div>
+	<div class="panel panel-default">
+	  <!-- Default panel contents -->
+	  <div class="panel-heading">Panel heading <%= link_to('create new user', new_user_path, class: 'btn btn-success') %></div>
+
+	  <!-- Table -->
+	  <table class="table">
+	  	<tr>
+	  		<td><p>email</p></td>
+	  		<td><p>admin</p></td>
+	  		<td><p>created at</p></td>
+	  		<td><p>last sign in at</p></td>
+	  	</tr>
+	  	 <% @users.each do |user| %>
+				<td><p><%= user.email %></p></td>
+				<td><p><%= user.admin %></p></td>
+				<td><p><%= user.created_at %></p></td>
+				<td><p><%= user.last_sign_in_at %></p></td>
+				<td><%= link_to('edit', edit_user_path(user), class: "btn btn-warning") %></td>
+				<td><%= link_to('destroy', user, method: :destroy, class: "btn btn-danger") %></td>
+			<% end %>
+	   
+	  </table>
+	</div>
+</div>
