@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
-	before_action :load_user, only: [:show, :edit, :update, :destroy]
+	load_and_authorize_resource param_method: :user_params
+	before_action :load_user, only: [:edit, :destroy]
+	before_filter :authenticate_user!
 
 	def index
 		@users = User.all
-	end
-
-	def show
 	end
 
 	def new
@@ -16,7 +15,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 
     if @user.save
-      redirect_to @user
+      redirect_to users_path
     else
       render :new
     end
@@ -25,15 +24,9 @@ class UsersController < ApplicationController
 	def edit
 	end
 
-	def update
-		if @user = User.update(user_params)
-			redirect_to @user
-		else
-			render :edit
-		end
-	end
-
 	def destroy
+		@user.destroy
+		redirect_to users_path
 	end
 
 	private

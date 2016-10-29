@@ -4,11 +4,15 @@ html {
     color: #686868;
 }
 body {
-    
+    margin-bottom: 50px;
+
+    #myCarousel {
+        margin-bottom: 20px;
+    }
     
 }
 footer {
-    position: relative;
+    position: absolute;
     bottom: 0;
     width: 100%;
     height: 10vh;

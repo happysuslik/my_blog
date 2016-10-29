@@ -1,6 +1,7 @@
 class PublicationsController < ApplicationController
+  load_and_authorize_resource param_method: :load_publication
   before_action :load_publication, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, only: [:new, :edit, :update, :destroy, :create]
+  before_filter :authenticate_user!, only: [:show, :new, :edit, :update, :destroy, :create]
  
   def index
     @publications = Publication.paginate(page: params[:page])
