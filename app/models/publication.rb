@@ -9,4 +9,6 @@ class Publication < ApplicationRecord
   	user.id == publication.user_id unless user.nil?
   end
 
+  Publication.per_page = 2
+
 end

@@ -1,28 +1,34 @@
-<div class="col-md-12">
-  <h1 class="text-center">Publications 
-  	<% if user_signed_in? %>
-			<%= link_to("New", new_publication_path, class: "btn btn-success") %>
+
+
+	<div class="col-md-12">
+	  <h1 class="text-center">Publications 
+	  	<% if user_signed_in? %>
+				<%= link_to("New", new_publication_path, class: "btn btn-success") %>
+			<% end %>
+		</h1>
+		<div class="text-center"> <%= will_paginate @publications %> </div>
+	</div>
+	<div class="col-md-12">
+		<% @publications.each do |publication|%>
+		  <div class="panel panel-default">
+		    <div class="panel-heading text-center">
+		    	<%= link_to publication.title, publication %>
+		    </div>
+				<div class="panel-body">
+					<div class="publication_image">
+						<%= image_tag (publication.avatar_url) if publication.avatar? %>
+					</div>
+					<p><%= publication.short_description %></p>
+					<div class="text-right">
+						<%= link_to("Узнать больше", publication, class: "btn btn-default") %>
+					</div>
+				</div>
+		  </div>
 		<% end %>
-	</h1>
-</div>
-<div class="col-md-12">
-	<% @publications.each do |publication|%>
-	  <div class="panel panel-default">
-	    <div class="panel-heading text-center">
-	    	<%= link_to publication.title, publication %>
-	    </div>
-			<div class="panel-body">
-				<div class="publication_image">
-					<%= image_tag (publication.avatar_url) if publication.avatar? %>
-				</div>
-				<p><%= publication.short_description %></p>
-				<div class="text-right">
-					<%= link_to("Узнать больше", publication, class: "btn btn-default") %>
-				</div>
-			</div>
-	  </div>
-	<% end %>
-</div>
+		<div class="text-center"> <%= will_paginate @publications %> </div>
+	</div>
+
+
 		
 
 

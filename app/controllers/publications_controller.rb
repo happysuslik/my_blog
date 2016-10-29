@@ -3,7 +3,7 @@ class PublicationsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :edit, :update, :destroy, :create]
  
   def index
-    @publications = Publication.all
+    @publications = Publication.paginate(page: params[:page])
   end
 
   def show
