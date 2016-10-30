@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   
   root to: 'publications#index'
 
+  get '*path', to: redirect('/')
+
 end
