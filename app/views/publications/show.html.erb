@@ -15,7 +15,7 @@
     	<%= image_tag (@publication.avatar_url) if @publication.avatar? %>
     </div>
     <div><p><%= @publication.description %></p></div>
-    <p class="count">Просмотренно: раз</p>
+    <p class="count">Просмотренно: <%= @review %> раз</p>
 	</div>
   <h1 class="text-center">Похожие статьи</h1>
   <div>

@@ -1,5 +1,5 @@
 class PublicationsController < ApplicationController
-  load_and_authorize_resource param_method: :load_publication
+  load_and_authorize_resource param_method: :publication_params
   before_action :load_publication, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, only: [:show, :new, :edit, :update, :destroy, :create]
  
@@ -9,6 +9,7 @@ class PublicationsController < ApplicationController
 
   def show
     @author_user = Publication.author_publication(current_user, @publication)
+    @review = Publication.reviews(current_user, @publication)
     @random_publications = Publication.random_publications
   end
 
