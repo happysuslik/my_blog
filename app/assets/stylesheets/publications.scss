@@ -2,6 +2,70 @@ html {
     position: relative;
     min-height: 100%;
     color: #686868;
+    input {
+        padding: 16px 16px;
+        background: #333;
+        font-size: 16px;
+        line-height: 16px;
+        color: #808080;
+        font-family: "ralewayregular","Helvetica Neue",Helvetica,Arial,sans-serif;
+        display: inline-block;
+        border: 3px solid #333;
+        margin: 0 auto;
+        max-width: 500px;
+        display: block;
+        width: 100%;
+        text-align: center;
+        outline: none;
+        margin-bottom: 48px;
+        transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        margin-bottom: 10px;
+    }
+
+    input:focus {
+        border: 3px solid #808080;
+        color: #fff;
+    }
+    
+    #new_user {
+
+        .actions input {
+            padding: 16px 40px;
+            border: 3px solid #cca07c;
+            background: transparent;
+            font-size: 16px;
+            line-height: 16px;
+            color: #cca07c;
+            font-family: "ralewaybold","Helvetica Neue",Helvetica,Arial,sans-serif;
+            display: inline-block;
+            outline: none;
+            margin: 0 auto;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 0px;
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 0px;
+            transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -webkit-transition: all 0.3s ease;
+            margin-top: 38px;
+            margin-bottom: 20px;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            margin: 4px 0px 0;
+            margin-top: 1px;
+            line-height: normal;
+            display: inline-block;
+            width: 30px;
+        }
+
+        input[type="file"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focus {
+            outline: none;
+        }
+    } 
 }
 body {
 
@@ -43,6 +107,15 @@ body {
         text-align: center;
         font-family: "ralewaybold","Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 42px;
+    }
+
+    h2 {
+        margin-top: 85px;
+        margin-bottom: 112px;
+        text-align: center;
+        font-family: "ralewaybold","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 68px;
+        font-weight: 700;
     }
 
     h3, .h3 {
