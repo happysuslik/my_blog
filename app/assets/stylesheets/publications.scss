@@ -2,9 +2,6 @@ html {
     position: relative;
     min-height: 100%;
     color: #686868;
-    input {
-        background: white;
-    }
 }
 body {
 
@@ -50,6 +47,8 @@ body {
 
     h3, .h3 {
         font-size: 26px;
+        margin-bottom: 45px;
+        margin-top: 91px;
     }
 
     h4, .h4 {
@@ -96,6 +95,39 @@ body {
     .articles .buttons {
         margin-top: 10px;
     }
+
+    .articles-show {
+        .buttons {
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .publication-image-show img {
+            width: 100%;
+            height: auto;
+        }
+
+        .excerpt-description {
+            margin-top: 24px;
+            margin-bottom: 10px;
+
+            p {
+                text-align: left;
+            }
+
+            .review {
+                margin: 45px 0 35px 0;
+            }
+        }
+
+        .similar-articles {
+            margin-top: 85px;
+            margin-bottom: 110px;
+        }
+
+    }
+    
+    
 
     .pagination {
         margin-top: 40px;
@@ -188,15 +220,4 @@ footer, .navbar {
         width: 100%;
         height: 226px;
     }
-}
-
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-  width: 70%;
-  margin: auto;
-}
-
-.carousel-inner {
-    height: 353px;
-    text-align: center;
 }

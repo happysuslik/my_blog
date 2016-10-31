@@ -1,27 +1,42 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-  	<%= @publication.title %>
-    <% if user_signed_in? %>
-      <% if @author_user %>
-        <%= link_to('Edit', edit_publication_path, class: "btn btn-warning") %>
-      <% end %>
-      <% if current_user.admin? %>
-        <%= link_to('Delete', @publication, method: :delete, class: "btn btn-danger") %>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="panel-body">
-    <div class="publication_image">
-    	<%= image_tag (@publication.avatar_url) if @publication.avatar? %>
+<div class="col-md-12">
+  <h3 class="text-center"><%= @publication.title %></h3>
+</div>
+<div class="col-md-12">
+    <div class="articles-show col-lg-12 col-md-12 col-sm-12">
+      <div class="buttons text-right">
+        <% if user_signed_in? %>
+          <% if current_user.admin? %>
+            <%= link_to(edit_publication_path) do %>
+              <i class="fa fa-pencil fa-2x edit" aria-hidden="true"></i>
+            <% end %>
+            <%= link_to(@publication, method: :delete) do %>
+              <i class="fa fa-trash-o fa-2x destroy" aria-hidden="true"></i>
+            <% end %>
+            <% elsif @author_user %>
+              <%= link_to(edit_publication_path) do %>
+                <i class="fa fa-pencil fa-2x edit" aria-hidden="true"></i>
+              <% end %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="wrap-image">
+        <div class="publication-image-show">
+            <%= image_tag (@publication.avatar_url) if @publication.avatar? %>
+        </div>
+      </div>
+
+      <div class="excerpt-description">
+        <div><p><%= @publication.description %></p></div>
+        <p class="review">Просмотренно: <%= @review %> раз</p>
+      </div>
+
+      <h3 class="text-center similar-articles">Похожие статьи</h3>
+      <div>
+        <%= render 'random_publication', collection: @random_publications %>
+      </div>
+
+      
     </div>
-    <div><p><%= @publication.description %></p></div>
-    <p class="count">Просмотренно: <%= @review %> раз</p>
-	</div>
-  <h1 class="text-center">Похожие статьи</h1>
-  <div>
-    <%= render 'carusel', collection: @random_publications %>
-  </div>
-  
 </div>
 
 
