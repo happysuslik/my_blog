@@ -40,6 +40,7 @@ gem "twitter-bootstrap-rails"
 
 gem 'will_paginate', '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
+gem 'font-awesome-sass'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -51,6 +52,8 @@ end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'database_cleaner'
+  gem 'capybara'
 end
 
 group :development do

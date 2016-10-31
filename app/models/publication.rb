@@ -23,6 +23,6 @@ class Publication < ApplicationRecord
   	publication.reviews.count
   end
 
-  Publication.per_page = 2
+  Publication.per_page = 6
 
 end

@@ -1,36 +1,40 @@
 <div class="col-md-12">
-  <h1 class="text-center">Publications 
-  	<% if user_signed_in? %>
-			<%= link_to("New", new_publication_path, class: "btn btn-success") %>
-		<% end %>
-	</h1>
-	<div class="text-center"> <%= will_paginate @publications %> </div>
+  <h2 class="text-center">Publications </h2>
 </div>
 <div class="col-md-12">
 	<% @publications.each do |publication|%>
-	  <div class="panel panel-default">
-	    <div class="panel-heading text-center">
-	    	<%= link_to publication.title, publication %>
-	    	<% if user_signed_in? %>
-	    		<% if current_user.admin? %>
-		        <%= link_to('Edit', edit_publication_path(publication), class: "btn btn-warning") %>
-		        <%= link_to('Delete', @publication, method: :delete, class: "btn btn-danger") %>
-		      <% end %>
-		    <% end %>
-	    </div>
-			<div class="panel-body">
+	  <div class="articles col-lg-4 col-md-6 col-sm-6">
+	  	<div class="wrap-image">
 				<div class="publication_image">
-					<%= image_tag (publication.avatar_url) if publication.avatar? %>
-				</div>
-				<p><%= publication.short_description %></p>
-				<div class="text-right">
-					<%= link_to("Узнать больше", publication, class: "btn btn-default") %>
+					<%= link_to publication do %>
+						<%= image_tag (publication.avatar_url) if publication.avatar? %>
+					<% end %>
 				</div>
 			</div>
+			<h4>
+				<%= link_to publication.title, publication %>
+			</h4>
+
+			<div class="excerpt">
+				<p><%= publication.short_description %></p>
+ 			</div>
+
+ 			<div class="buttons">
+				<% if user_signed_in? %>
+	    		<% if current_user.admin? %>
+		        <%= link_to(edit_publication_path(publication)) do %>
+		        	<i class="fa fa-pencil fa-2x edit" aria-hidden="true"></i>
+		        <% end %>
+		        <%= link_to(@publication, method: :delete) do %>
+		        	<i class="fa fa-trash-o fa-2x destroy" aria-hidden="true"></i>
+		        <% end %>
+		      <% end %>
+		    <% end %>
+ 			</div>
 	  </div>
 	<% end %>
-	<div class="text-center"> <%= will_paginate @publications %> </div>
 </div>
+<div class="text-center pagination"> <%= will_paginate @publications %> </div>
 
 
 		

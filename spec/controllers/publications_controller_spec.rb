@@ -1,7 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe PublicationsController, type: :controller do
-  let(:publication) { FactoryGirl.create(:publication) }
+  let(:publication) { create(:publication) }
+  let(:user) { create(:user) }
+
+  # before do
+  #   sign_in user
+  # end
 
   describe "GET #index" do
     let(:publications) { FactoryGirl.create_list(:publication, 2) }
@@ -18,8 +23,12 @@ RSpec.describe PublicationsController, type: :controller do
   end
 
   describe "GET #show" do
-    before { get :show, params: { id: publication } }
-    
+
+    before do
+      sign_in user
+      get :show, params: { id: publication }
+    end
+  
     it "assigns the requested publication to @publication" do
       expect(assigns(:publication)).to eq publication
     end
