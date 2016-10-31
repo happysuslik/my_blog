@@ -2,6 +2,7 @@ html {
     position: relative;
     min-height: 100%;
     color: #686868;
+
     input {
         padding: 16px 16px;
         background: #333;
@@ -27,6 +28,73 @@ html {
     input:focus {
         border: 3px solid #808080;
         color: #fff;
+    }
+
+    .edit_publication, .new_publication {
+        input, textarea {
+            padding: 16px 16px;
+            background: #333;
+            font-size: 16px;
+            line-height: 16px;
+            color: #808080;
+            font-family: "ralewayregular","Helvetica Neue",Helvetica,Arial,sans-serif;
+            display: inline-block;
+            border: 3px solid #333;
+            margin: 0 auto;
+            max-width: 500px;
+            display: block;
+            width: 100%;
+            text-align: center;
+            outline: none;
+            margin-bottom: 48px;
+            transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -webkit-transition: all 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            min-width: 100%;
+            min-height: 250px;
+            resize: none;
+            text-align: start;
+        }
+
+        abbr {
+            display: none;
+        }
+
+        input:focus {
+            border: 3px solid #808080;
+            color: #fff;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            border: 3px solid #cca07c;
+            background: transparent;
+            font-size: 16px;
+            line-height: 16px;
+            color: #cca07c;
+            font-family: "ralewaybold","Helvetica Neue",Helvetica,Arial,sans-serif;
+            display: inline-block;
+            outline: none;
+            margin: 0 auto;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 0px;
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 0px;
+            transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -webkit-transition: all 0.3s ease;
+            margin-top: 38px;
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            height: auto;
+        }
     }
     
     #new_user {
