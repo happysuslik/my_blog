@@ -4,9 +4,9 @@ RSpec.describe PublicationsController, type: :controller do
   let(:publication) { create(:publication) }
   let(:user) { create(:user) }
 
-  # before do
-  #   sign_in user
-  # end
+  before do
+    sign_in user
+  end
 
   describe "GET #index" do
     let(:publications) { FactoryGirl.create_list(:publication, 2) }
@@ -25,7 +25,6 @@ RSpec.describe PublicationsController, type: :controller do
   describe "GET #show" do
 
     before do
-      sign_in user
       get :show, params: { id: publication }
     end
   
@@ -123,17 +122,32 @@ RSpec.describe PublicationsController, type: :controller do
   end
 
   describe "DELETE #destroy" do
+    let(:admin) { create(:admin) }
     before { publication }
 
-    it "delete publication" do
-      expect { delete :destroy, params: { id: publication } }.to change(Publication, :count).by(-1)
+    context 'User sign in' do
+
+      it "user cant not delete publication" do
+        expect { delete :destroy, params: { id: publication } }.to change(Publication, :count).by(0)
+      end
+
     end
 
-    it 'redirect to index view' do
-      delete :destroy, params: { id: publication }
-      expect(response).to redirect_to publications_path
-    end 
+    context 'Admin sign in' do
+      logout(:user)
+      before(:each) do
+        sign_in admin
+      end
+      it "Admin can delete publication" do
+        expect { delete :destroy, params: { id: publication } }.to change(Publication, :count).by(-1)
+      end
 
+      it 'redirect to index view' do
+        delete :destroy, params: { id: publication }
+        expect(response).to redirect_to publications_path
+      end 
+    end
+    
   end
 
 end

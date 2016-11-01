@@ -1,7 +1,7 @@
 class Publication < ApplicationRecord
   belongs_to :user
   has_many :reviews, dependent: :destroy
-  validates :title, :description, presence: true
+  validates :title, :description, :short_description, presence: true
   mount_uploader :avatar, AvatarUploader
 
   scope :random_publications, -> { order("RANDOM()").limit(3) }
