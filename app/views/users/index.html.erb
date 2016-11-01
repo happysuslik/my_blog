@@ -1,26 +1,48 @@
-<div>
-	<div class="panel panel-default">
-	  <div class="panel-heading">Panel heading <%= link_to('create new user', new_user_path, class: 'btn btn-success') %></div>
+<%= link_to('create new user', new_user_path, class: 'btn create-user') %>
 
-	  <table class="table">
-	  	<tr class="text-center">
-	  		<td><p>email</p></td>
-	  		<td><p>admin</p></td>
-	  		<td><p>created at</p></td>
-	  		<td><p>last sign in at</p></td>
-	  		<td><p>Destroy</p></td>
-	  	</tr>
-	  	
-	  	 <% @users.each do |user| %>
-	  	 		<tr class="text-center">
-						<td class="text-left"><p><%= user.email %></p></td>
-						<td><p><%= user.admin %></p></td>
-						<td><p><%= user.created_at %></p></td>
-						<td><p><%= user.last_sign_in_at %></p></td>
-						<td><%= link_to('destroy', user, method: :delete, class: "btn btn-danger") %></td>
-					</tr>
-				<% end %>
-
-	  </table>
-	</div>
+<div class="col-md-12">
+  <h2 class="text-center">Admin Page</h2>
 </div>
+<div class="info-page col-md-12">
+	  
+	  <div class="col-lg-6 col-md-6 col-sm-6">
+			<h4>
+				Admins
+			</h4>
+
+			<div class="excerpt-info">
+					
+				<ul class="list-group info">
+					<li class="col-lg-12 col-md-12 col-sm-12 list-group-item">
+						<span class="col-lg-6 col-md-6 col-sm-6">Email</span>
+						<span class="col-lg-6 col-md-6 col-sm-6">Destroy</span>
+					</li>
+				</ul>
+				
+				<%= render partial: 'users_admin' %>
+ 			</div>
+
+ 		</div>
+
+ 		<div class="col-lg-6 col-md-6 col-sm-6">
+			<h4>
+				Copywraiters
+			</h4>
+
+			<div class="excerpt-info">
+				<ul class="list-group info">
+					<li class="col-lg-12 col-md-12 col-sm-12 list-group-item">
+						<span class="col-lg-6 col-md-6 col-sm-6">Email</span>
+						<span class="col-lg-6 col-md-6 col-sm-6">Destroy</span>
+					</li>
+				</ul>
+
+				<%= render partial: 'copywriters' %>
+				
+ 			</div>
+
+ 		</div>
+
+	
+</div>
+
