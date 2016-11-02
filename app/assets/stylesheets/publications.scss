@@ -135,6 +135,7 @@ html {
         }
     } 
 }
+
 body {
 
     font-family: "ralewayregular","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -155,6 +156,10 @@ body {
         
         .navbar-header, .navbar-nav > li {
             text-transform: uppercase;
+        }
+
+        @media screen and (max-width: 823px) {
+            
         }
     }
 
@@ -331,6 +336,27 @@ body {
             padding-left: 60px;
         }
 
+        .destroy-block {
+            left: 7%;
+        }
+
+        @media screen and (max-width: 1295px) {
+
+            .desktop {
+                display: none;
+            }
+
+            .mobile {
+                display: block;
+            }
+
+            span.email {
+                text-align: left;
+                padding-left: 1%;
+            }
+            
+        }
+
         @media screen and (max-width: 768px) {
 
             .desktop {
@@ -339,6 +365,10 @@ body {
 
             .mobile {
                 display: block;
+            }
+
+            .destroy-block {
+                left: 0;
             }
             
         }
