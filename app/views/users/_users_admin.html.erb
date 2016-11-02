@@ -5,7 +5,7 @@
 				<%= user.email %>
 			</li>
 			<li class="col-lg-6 col-md-6 col-sm-6 list-group-item">
-				<%= link_to(user, method: :delete) do %>
+				<%= link_to(user, method: :delete, class: "mobile_user_#{user.id}") do %>
 					<i class="fa fa-trash-o fa-2x destroy" aria-hidden="true"></i>
 				<% end %>
 			</li>
@@ -17,7 +17,7 @@
 					<%= user.email %>
 				</span>
 				<span class="col-lg-6 col-md-6 col-sm-6">
-					<%= link_to(user, method: :delete) do %>
+					<%= link_to(user, method: :delete, class: "desktop_user_#{user.id}") do %>
 						<i class="fa fa-trash-o fa-2x destroy" aria-hidden="true"></i>
 					<% end %>
 				</span>

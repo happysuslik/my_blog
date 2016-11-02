@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	load_and_authorize_resource param_method: :user_params
 	before_action :load_user, only: [:edit, :destroy]
-	before_filter :authenticate_user!
+	before_action :authenticate_user!
 
 	def index
 		@users = User.all
