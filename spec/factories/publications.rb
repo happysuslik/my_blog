@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :publication do
-    user nil
+    association :user, factory: :user
     title "MyString"
     description "MyText"
     avatar "MyString"

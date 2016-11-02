@@ -6,14 +6,14 @@
       <div class="buttons text-right">
         <% if user_signed_in? %>
           <% if current_user.admin? %>
-            <%= link_to(edit_publication_path) do %>
+            <%= link_to(edit_publication_path, class: "edit_publication") do %>
               <i class="fa fa-pencil fa-2x edit" aria-hidden="true"></i>
             <% end %>
-            <%= link_to(@publication, method: :delete) do %>
+            <%= link_to(@publication, method: :delete, class: "destroy_publication") do %>
               <i class="fa fa-trash-o fa-2x destroy" aria-hidden="true"></i>
             <% end %>
             <% elsif @author_user %>
-              <%= link_to(edit_publication_path) do %>
+              <%= link_to(edit_publication_path, class: "edit_publication") do %>
                 <i class="fa fa-pencil fa-2x edit" aria-hidden="true"></i>
               <% end %>
           <% end %>

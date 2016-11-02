@@ -1,15 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe PublicationsController, type: :controller do
-  let(:publication) { create(:publication) }
   let(:user) { create(:user) }
+  let(:publication) { create(:publication, user: user) }
+  
 
   before do
     sign_in user
   end
 
   describe "GET #index" do
-    let(:publications) { FactoryGirl.create_list(:publication, 2) }
+    let(:publications) { FactoryGirl.create_list(:publication, 2, user: user) }
 
     before { get :index }
 

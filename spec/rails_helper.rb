@@ -17,6 +17,10 @@ ActiveRecord::Migration.maintain_test_schema!
 # RSpec ---------------------------------------------------------------------------------------------------------------
 
 RSpec.configure do |config|
+
+  config.use_transactional_fixtures = false
+
+  config.include Warden::Test::Helpers
   config.include MyModel::SessionHelpers, type: :feature
   config.include FactoryGirl::Syntax::Methods
 
@@ -38,20 +42,14 @@ RSpec.configure do |config|
     config.include ::Rails::Controller::Testing::Integration, :type => type
   end
 
+  config.after :each do
+    Warden.test_reset!
+  end
+
 end
 
-# Capybara.default_driver = :selenium
-# Capybara.register_driver :selenium do |app|
-#   Capybara::Selenium::Driver.new(
-#     app,
-#     browser: :firefox,
-#     desired_capabilities: Selenium::WebDriver::Remote::Capabilities.firefox(marionette: false)
-#   )
-# end
+Capybara.register_driver :chrome do |app| 
+  Capybara::Selenium::Driver.new(app, :browser => :chrome) 
+end
 
-# Capybara.current_driver = :webkit
-# Capybara.javascript_driver = :webkit
-
-# Capybara.register_driver :selenium do |app|
-#   Capybara::Selenium::Driver.new(app, :browser => :chrome)
-# end
+Capybara.javascript_driver = :chrome

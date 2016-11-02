@@ -39,7 +39,7 @@ feature 'the sign in processing', :feature do
       click_link 'Admin Panel'
       expect(page).to have_content 'Admin Page'
     end
-end
-
+    
+  end
 
 end
