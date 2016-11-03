@@ -162,6 +162,7 @@ body {
         -webkit-transition: background-color 0.5s ease;
         display: inline-block;
         width: 100%;
+        overflow: hidden;
         
         .navbar-header, .navbar-nav > li {
             text-transform: uppercase;
@@ -188,25 +189,154 @@ body {
 
         .navigation {
             height: 59px;
-            width: 55%;
+            width: 100%;
             z-index: 2000;
             font-size: 14px;
             position: relative;
-            left: 44%;
             transition: background-color 0.5s ease;
             -moz-transition: background-color 0.5s ease;
             -webkit-transition: background-color 0.5s ease;
+        }
+
+        .desktop, .mobile {
+            height: 59px;
+        }
+
+        .desktop a {
+            float: left;
+            text-transform: uppercase;
+            margin-right: 30px;
+            display: block;
+            height: 59px;
+            line-height: 58px;
+            text-align: left;
+        }
+
+        .desktop a:hover {
+            color: #fff;
+            text-decoration: none;
+            font-family: "ralewayextrabold","Helvetica Neue",Helvetica,Arial,sans-serif;
+        }
+
+        .desktop .left-nav {
+            float: left;
+            margin-left: 135px;
+        }
+
+        .desktop .right-nav {
+            float: right;
+        }
+
+        .mobile {
+            top: 0;
+            position: relative;
+            margin: 0;
+        }
+
+        
+        .navigation .mobile {
+            display: none;
+        }
+
+        .navigation .desktop {
+            display: block;
         }
 
         .navigation a {
             color: #777;
         }
 
-        @media screen and (max-width: 700px) {
+        @media screen and (max-width: 1024px) {
             .navigation .mobile {
-                top: 11px;
+                display: block;
+            }
+
+            .navigation .desktop {
+                display: none;
+            }
+
+            .navigation .mobile {
+                width: 86%;
+                left: 14%;
+            }
+
+            .navigation .mobile i {
+                margin: 0px 10px;
+                width: 10%;
+            }
+
+            .mobile .left-nav a:first-child {
+                top: 12px;
                 position: relative;
-                margin: 0 5px;
+                left: 3px;
+            }
+
+            .mobile .left-nav a:last-child {
+                top: 12px;
+                position: relative;
+                left: 0;
+            }
+
+            .mobile .center-nav a:first-child {
+                position: absolute;
+                top: 12px;
+                right: 116px;
+            }
+
+            .mobile .right-nav a:first-child {
+                position: absolute;
+                top: 12px;
+                right: 12px;
+            }
+            
+        }
+
+   
+
+      
+
+        @media screen and (max-width: 768px) {
+            
+            .navigation .mobile {
+                width: 82%;
+                left: 18%;
+            }
+
+            .navigation .mobile i {
+                margin: 0px 10px;
+                width: 10%;
+            }
+
+            .mobile .left-nav a:first-child {
+                top: 12px;
+                position: relative;
+                left: 3px;
+            }
+
+            .mobile .left-nav a:last-child {
+                top: 12px;
+                position: relative;
+                left: 0;
+            }
+
+            .mobile .center-nav a:first-child {
+                position: absolute;
+                top: 12px;
+                right: 87px;
+            }
+
+            .mobile .right-nav a:first-child {
+                position: absolute;
+                top: 12px;
+                right: 12px;
+            }
+        }
+
+        @media screen and (max-width: 640px) {
+            
+            .navigation .mobile {
+                width: 78%;
+                left: 22%;
             }
 
             .navigation .mobile i {
@@ -214,11 +344,142 @@ body {
                 width: 10%;
             }
 
+            .mobile .left-nav a:first-child {
+                top: 12px;
+                position: relative;
+                left: 3px;
+            }
+
+            .mobile .left-nav a:last-child {
+                top: 12px;
+                position: relative;
+                left: 0;
+            }
+
+            .mobile .center-nav a:first-child {
+                position: absolute;
+                top: 12px;
+                right: 87px;
+            }
+
+            .mobile .right-nav a:first-child {
+                position: absolute;
+                top: 12px;
+                right: 12px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            
+            .navigation .mobile {
+                width: 73%;
+                left: 27%;
+            }
+
+            .navigation .mobile i {
+                margin: 0px 6%;
+                width: 10%;
+            }
+
+            .mobile .left-nav a:first-child {
+                top: 12px;
+                position: relative;
+                left: 3px;
+            }
+
+            .mobile .left-nav a:last-child {
+                top: 12px;
+                position: relative;
+                left: 0;
+            }
+
+            .mobile .center-nav a:first-child {
+                position: absolute;
+                top: 12px;
+                right: 87px;
+            }
+
+            .mobile .right-nav a:first-child {
+                position: absolute;
+                top: 12px;
+                right: 12px;
+            }
+        }
+
+        @media screen and (max-width: 360px) {
+            .navigation .mobile {
+                width: 73%;
+                left: 27%;
+            }
+
+            .navigation .mobile i {
+                margin: 0 10px;
+                width: 17px;
+            }
+
+            .mobile .left-nav a:first-child {
+                top: 12px;
+                position: relative;
+                left: 40px;
+            }
+
+            .mobile .left-nav a:last-child {
+                top: 12px;
+                position: relative;
+                left: 39px;
+            }
+
+            .mobile .center-nav a:first-child {
+                position: absolute;
+                top: 12px;
+                right: 56px;
+            }
+
+            .mobile .right-nav a:first-child {
+                position: absolute;
+                top: 12px;
+                right: 12px;
+            }
+
         }
 
 
+        @media screen and (max-width: 320px) {
+            .navigation .mobile {
+                width: 73%;
+                left: 27%;
+            }
 
-        
+            .navigation .mobile i {
+                margin: 0 10px;
+                width: 17px;
+            }
+
+            .mobile .left-nav a:first-child {
+                top: 12px;
+                position: relative;
+                left: 40px;
+            }
+
+            .mobile .left-nav a:last-child {
+                top: 12px;
+                position: relative;
+                left: 39px;
+            }
+
+            .mobile .center-nav a:first-child {
+                position: absolute;
+                top: 12px;
+                right: 56px;
+            }
+
+            .mobile .right-nav a:first-child {
+                position: absolute;
+                top: 12px;
+                right: 12px;
+            }
+
+        }
 
 
     }
@@ -408,7 +669,7 @@ body {
             left: 7%;
         }
 
-        @media screen and (max-width: 1295px) {
+        @media screen and (max-width: 1120px) {
 
             .desktop {
                 display: none;

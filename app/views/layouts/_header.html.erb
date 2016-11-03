@@ -2,47 +2,63 @@
   <a class="logo" href="/">Blogs</a>
   <div class="navigation">
     <div class="mobile">
-      <%= link_to root_path do %>
-        <i class="fa fa-home fa-2x" aria-hidden="true"></i>
-      <% end %>
-
-      <% if user_signed_in? %>
-        <%= link_to new_publication_path do %>
-          <i class="fa fa-pencil-square fa-2x" aria-hidden="true"></i>
+      <div class="left-nav">
+        <%= link_to root_path do %>
+          <i class="fa fa-home fa-2x left-menu" aria-hidden="true"></i>
         <% end %>
-      <% end %>
 
-      <% if user_signed_in? %>
-        <% if current_user.admin? %>
-          <%= link_to users_path  do %>
-            <i class="fa fa-unlock fa-2x" aria-hidden="true"></i>
+        <% if user_signed_in? %>
+          <%= link_to new_publication_path do %>
+            <i class="fa fa-pencil-square fa-2x left-menu" aria-hidden="true"></i>
           <% end %>
         <% end %>
-        <%= link_to destroy_user_session_path, :method => :delete  do %>
-          <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
+      </div>
+
+      <div class="center-nav">
+        <% if user_signed_in? %>
+          <% if current_user.admin? %>
+            <%= link_to users_path  do %>
+              <i class="fa fa-unlock fa-2x right-menu" aria-hidden="true"></i>
+            <% end %>
+          <% end %>
         <% end %>
-      <% else %>
-       <%= link_to new_user_session_path do %>
-          <i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>
-       <% end %>
-      <% end %>
+      </div>
 
-
+      <div class="right-nav">
+        <% if user_signed_in? %>
+          <%= link_to destroy_user_session_path, :method => :delete  do %>
+            <i class="fa fa-sign-out fa-2x right-menu" aria-hidden="true"></i>
+          <% end %>
+        <% else %>
+          <%= link_to new_user_session_path do %>
+            <i class="fa fa-sign-in fa-2x right-menu" aria-hidden="true"></i>
+          <% end %>
+        <% end %>
+      </div>
     </div>
-    <!-- <a href="/">Home <span class="sr-only">(current)</span></a>  -->
-   <!--  <% if user_signed_in? %>
-      <%= link_to("create article", new_publication_path) %>
-    <% end %>
 
-    <% if user_signed_in? %>
-      <% if current_user.admin? %>
-        <%= link_to 'Admin Panel', users_path %>
-      <% end %>
-      <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
-    <% else %>
-     <%= link_to 'Sign in', new_user_session_path %>
-    <% end %> -->
+
+    <div class="desktop">
+      <div class="left-nav">
+        <a href="/">Home <span class="sr-only">(current)</span></a> 
+        <% if user_signed_in? %>
+          <%= link_to("create article", new_publication_path) %>
+        <% end %>
+      </div>
+      
+      <div class="right-nav">
+        <% if user_signed_in? %>
+          <% if current_user.admin? %>
+            <%= link_to 'Admin Panel', users_path %>
+          <% end %>
+          <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+        <% else %>
+         <%= link_to 'Sign in', new_user_session_path %>
+        <% end %> 
+      </div>
+      
+    </div>
+
   </div>
   
-
 </nav>
