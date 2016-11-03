@@ -9,7 +9,6 @@ feature 'the sign in processing', :feature do
 
 	it 'sign out' do
 		sign_in_with(@user.email, @user.password)
-    save_and_open_page
 		click_on 'Sign out'
 		expect(page).to have_content 'Sign in'
 	end
