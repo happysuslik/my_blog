@@ -247,6 +247,8 @@ body {
             color: #777;
         }
 
+
+
         @media screen and (max-width: 1024px) {
             .navigation .mobile {
                 display: block;
@@ -480,6 +482,86 @@ body {
                 right: 12px;
             }
 
+        }
+
+    }
+
+    .publication_image {
+        max-width: 389px;
+        margin: 0 auto;
+        cursor: pointer;
+        height: 239px;
+        
+       img {
+            margin: 0 auto;
+            width: auto;
+            height: 100%;
+        } 
+
+    }
+
+    @media screen and (max-width: 1024px) { 
+        .publication_image {
+            max-width: 315px;
+            margin: 0 auto;
+            cursor: pointer;
+            height: 180px;
+        }
+
+    }
+
+
+    @media screen and (max-width: 768px) { 
+        .publication_image {
+            max-width: 100%;
+            margin: 0 auto;
+            cursor: pointer;
+            height: 250px;
+        }
+
+    }
+
+    @media screen and (max-width: 640px) { 
+        .publication_image {
+            max-width: 100%;
+            margin: 0 auto;
+            cursor: pointer;
+            height: 190px;
+        }
+
+    }
+
+    @media screen and (max-width: 480px) { 
+        .publication_image {
+            max-width: 100%;
+            margin: 0 auto;
+            cursor: pointer;
+            height: 190px;
+        }
+
+    }
+
+
+    @media screen and (max-width: 360px) { 
+        .publication_image {
+            max-width: 100%;
+            margin: 0 auto;
+            cursor: pointer;
+            height: 135px;
+        }
+
+    }
+
+    @media screen and (max-width: 320px) { 
+        .publication_image {
+            max-width: 100%;
+            margin: 0 auto;
+            cursor: pointer;
+            height: 120px;
+        }
+
+        .pagination > li > a, .pagination > li > span {
+            padding: 6px 9px;
         }
 
     }
@@ -764,13 +846,5 @@ footer, .navbar {
 	border-radius: 0px;
 }
 
-.publication_image {
-    width: 100%;
-    margin: 0 auto;
-    cursor: pointer;
-    img {
-        width: auto;
-        height: 200px;
-    }
-}
+
 

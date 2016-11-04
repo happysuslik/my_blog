@@ -4,7 +4,7 @@
       <div class="wrap-image">
         <div class="publication_image">
           <%= link_to publication do %>
-            <%= image_tag (publication.avatar_url) if publication.avatar? %>
+            <%= image_tag (publication.avatar_url), class: "img-responsive" if publication.avatar? %>
           <% end %>
         </div>
       </div>
