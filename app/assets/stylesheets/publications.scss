@@ -52,6 +52,7 @@ html {
             -moz-transition: all 0.3s ease;
             -webkit-transition: all 0.3s ease;
             margin-bottom: 10px;
+            white-space: normal;
         }
 
         textarea {
@@ -481,7 +482,6 @@ body {
 
         }
 
-
     }
 
     #myCarousel {
@@ -493,6 +493,7 @@ body {
         color: #fff;
         font-family: "ralewaybold","Helvetica Neue",Helvetica,Arial,sans-serif;
         font-weight: normal;
+        word-wrap:break-word;
     }
 
     h2.text-center {
@@ -501,6 +502,7 @@ body {
         text-align: center;
         font-family: "ralewaybold","Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 42px;
+        word-wrap:break-word;
     }
 
     h2 {
@@ -516,10 +518,12 @@ body {
         font-size: 26px;
         margin-bottom: 45px;
         margin-top: 91px;
+        word-wrap:break-word;
     }
 
     h4, .h4 {
         font-size: 16px;
+        word-wrap:break-word;
     }
 
     @media screen and (max-width: 500px) {
@@ -766,7 +770,7 @@ footer, .navbar {
     cursor: pointer;
     img {
         width: 100%;
-        height: 226px;
+        height: auto;
     }
 }
 
