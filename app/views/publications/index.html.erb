@@ -25,7 +25,7 @@
 		        <%= link_to(edit_publication_path(publication)) do %>
 		        	<i class="fa fa-pencil fa-2x edit" aria-hidden="true"></i>
 		        <% end %>
-		        <%= link_to(@publication, method: :delete) do %>
+		        <%= link_to(publication, method: :delete) do %>
 		        	<i class="fa fa-trash-o fa-2x destroy" aria-hidden="true"></i>
 		        <% end %>
 		      <% end %>
