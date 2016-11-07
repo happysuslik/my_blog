@@ -11,7 +11,6 @@
 * Carrierwave
 * Twitter-bootstrap-rails
 * Will_paginate
-
 * Rspec-rails
 * Factory_girl_rails
 * Capybara
