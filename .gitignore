@@ -29,3 +29,5 @@ config/initializers/secret_token.rb
 bower.json
 rvmrc
 public/uploads/*/
+config/*.sphinx.conf
+db/sphinx

@@ -41,6 +41,10 @@ gem "twitter-bootstrap-rails"
 gem 'will_paginate', '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'font-awesome-sass'
+gem 'mysql2'
+gem 'thinking-sphinx'
+gem 'whenever', :require => false
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

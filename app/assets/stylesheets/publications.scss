@@ -247,6 +247,18 @@ body {
             color: #777;
         }
 
+        .navbar-form {
+            margin-top: 10px;
+            .form-group {
+                .form-control {
+                    margin-bottom: 0;
+                }
+                input {
+                    color: black;
+                }
+            }
+        }
+
 
 
         @media screen and (max-width: 1024px) {

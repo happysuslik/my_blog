@@ -4,7 +4,15 @@ class PublicationsController < ApplicationController
   before_action :authenticate_user!, only: [:show, :new, :edit, :update, :destroy, :create]
  
   def index
-    @publications = Publication.paginate(page: params[:page])
+    @publications = if params[:search]
+      Publication.search params[:search]
+    else
+      Publication.paginate(page: params[:page])
+    end
+  end
+
+  def search
+    
   end
 
   def show
