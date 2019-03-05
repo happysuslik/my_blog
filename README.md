@@ -17,5 +17,4 @@
 * Shoulda-matchers
 * Database_cleaner
 
-The app is on Heroku: 
-https://cryptic-refuge-29048.herokuapp.com/
+
